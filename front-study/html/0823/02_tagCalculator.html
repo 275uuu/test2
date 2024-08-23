@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02</title>
+  </head>
+  <body>
+    <input type="text" placeholder="첫번째 수" />
+
+    <select>
+      <option value="+">+</option>
+      <option value="-">-</option>
+    </select>
+    <input type="text" placeholder="두번째 수" />
+    <button onclick="result()">계산</button>
+    <!-- <input type="text" placeholder="결과 출력" /> -->
+    <!-- 결과입력 -->
+    <span id="result"></span>
+    <script>
+      function result() {
+        let inputs = document.getElementsByTagName("input");
+        let op = document.getElementsByTagName("select")[0].value;
+        let n1 = +inputs[0].value;
+        let n2 = +inputs[1].value;
+
+        if (op === "+") document.getElementById("result").innerText = n1 + n2;
+        else if (op === "-") document.getElementById("result").innerText = n1 - n2;
+      }
+    </script>
+  </body>
+</html>

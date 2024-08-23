@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>07</title>
+
+    <style>
+      .main-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 20% auto;
+        width: 75%;
+      }
+
+      #results {
+        width: 86%;
+        margin: 5%;
+        border: 2px solid #0e2375;
+        border-radius: 13px;
+      }
+
+      #results > div:nth-child(2n) {
+        background-color: #d2ecff;
+      }
+
+      #results > div:last-child {
+        border: none;
+      }
+
+      #results > div {
+        border-bottom: 1px solid #2158bf;
+        padding: 10px;
+      }
+
+      input {
+        padding: 5px;
+        margin: 0px 6px 0px 6px;
+        border-color: #2158bf;
+        border-radius: 8px;
+        height: 26px;
+      }
+
+      button {
+        border: none;
+        padding: 10px;
+        border-radius: 8px;
+        background-color: #2158bf;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-content">
+      <div class="input-wrapper">
+        <input type="text" name="" id="n1" />
+        <input type="text" name="" id="n2" />
+        <button onclick="makeResultView()">결과 출력</button>
+      </div>
+      <div id="results"></div>
+    </div>
+
+    <script>
+      function makeResultView() {
+        let n1 = +document.getElementById("n1").value;
+        let n2 = +document.getElementById("n2").value;
+        let res = "";
+
+        for (let i = 1; i <= n2; i++) {
+          res += "<div>" + n1 + " X " + i + "=" + n1 * i + "</div>";
+        }
+
+        document.getElementById("results").innerHTML = res;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sign up</title>
+
+    <style>
+      @font-face {
+        font-family: "dalmoori";
+        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2102-01@1.0/dalmoori.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "DungGeunMo";
+        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        background-color: rgb(0, 119, 255);
+        overflow: hidden;
+      }
+
+      .background {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 95%;
+        background-image: url(../../img/blueblue.jpg);
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 1% auto;
+        z-index: 2;
+      }
+
+      .background::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 10%;
+        background: #ffffff8a;
+        z-index: -1;
+        animation: move 3.5s linear infinite;
+      }
+
+      .background::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 0.5%;
+        background: #ffffff8a;
+        z-index: -1;
+        animation: move 3.5s linear infinite;
+        animation-delay: 0.1s;
+      }
+
+      @keyframes move {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(1000px);
+        }
+      }
+
+      #signUp,
+      button[type="reset"] {
+        background-color: rgb(21 57 133 / 68%);
+        color: white;
+        padding: 2%;
+        border: 2px solid white;
+        border-radius: 30px;
+        font-family: "DungGeunMo";
+      }
+
+      form#signUp {
+        box-shadow: 0 0 37px white;
+        z-index: 2;
+        animation: show 1.5s linear;
+      }
+
+      @keyframes show {
+        0% {
+          transform: translateX(-1000px);
+        }
+        80% {
+          transform: translateX(0);
+        }
+        90% {
+          transform: translateX(-10px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      .button-wrapper {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+      }
+
+      button,
+      button#signUp {
+        transition: 0.2s linear;
+        width: 120px;
+        height: 45px;
+        font-size: 17px;
+      }
+
+      button:hover,
+      button#signUp:hover {
+        background-color: rgba(4, 19, 49, 0.68);
+      }
+
+
+      table {
+        border-collapse: collapse;
+      }
+
+      tr,
+      td {
+        padding: 10px;
+      }
+
+      .sub-title {
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .subject {
+        font-size: 20px;
+        border-bottom: 1px solid white;
+        width: 100%;
+        padding-bottom: 8px;
+        margin-bottom: 5px;
+      }
+
+      h1 {
+        font-family: "dalmoori";
+        font-size: 60px;
+        margin-top: 0;
+        margin-bottom: 15px;
+        animation: show 1.5s linear;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      textarea,
+      select {
+        border: none;
+        padding: 8px;
+        border-radius: 9px;
+        background: #ffffffd6;
+        transition: 0.2s linear;
+      }
+
+      textarea {
+        resize: none;
+      }
+
+      input[type="number"] {
+        width: 50px;
+      }
+
+      input[type="text"] {
+        width: 300px;
+      }
+
+      input:focus,
+      textarea:focus,
+      select:focus {
+        box-shadow: 0 0 15px #ffffff;
+        background-color: #ffffff;
+        border: none;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+      <h1>Sign Up</h1>
+      <form action="" id="signUp">
+        <table>
+          <tr>
+            <div class="subject sub-title">회원 기본 정보</div>
+          </tr>
+          <tr>
+            <td class="sub-title">아이디:</td>
+            <td>
+              <input
+                type="text"
+                name=""
+                id="userId"
+                placeholder="4~12자의 영문 대소문자와 숫자로만 입력"
+              />&nbsp;<img src="" alt="" />
+            </td>
+          </tr>
+          <tr>
+            <td class="sub-title">비밀번호:</td>
+            <td>
+              <input
+                type="text"
+                name=""
+                id="userPw"
+                placeholder="4~12자의 영문 대소문자와 숫자로만 입력"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td class="sub-title">비밀번호 확인:</td>
+            <td>
+              <input
+                type="text"
+                name=""
+                id="userPwCheck"
+                onchange="checkCorrectPw()"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td class="sub-title">메일주소:</td>
+            <td>
+              <input
+                type="text"
+                name=""
+                id="userMail"
+                placeholder="ex) id@domain.com"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td class="sub-title">이름:</td>
+            <td>
+              <input type="text" name="" id="userName" />
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2"></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div class="subject sub-title">개인 신상 정보</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="sub-title">주민등록번호:</td>
+            <td>
+              <input
+                type="text"
+                name=""
+                id="userNumber"
+                placeholder="1234561234567"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td class="sub-title">생일:</td>
+            <td>
+              <input
+                type="number"
+                name=""
+                id="userBirthYear"
+                placeholder="2000"
+              />&nbsp;년&nbsp;
+              <select name="" id="month" onchange="makeDateOptionDay()"></select
+              >&nbsp;월&nbsp;
+              <select name="" id="day"></select
+              >&nbsp;일
+            </td>
+          </tr>
+          <tr>
+            <td class="sub-title">관심분야:</td>
+            <td>
+              <input
+                type="checkbox"
+                name="interests"
+                id=""
+                value="computer"
+              />컴퓨터
+              <input
+                type="checkbox"
+                name="interests"
+                id=""
+                value="internet"
+              />인터넷
+              <input
+                type="checkbox"
+                name="interests"
+                id=""
+                value="travle"
+              />여행
+              <input
+                type="checkbox"
+                name="interests"
+                id=""
+                value="movie"
+              />영화감상
+              <input
+                type="checkbox"
+                name="interests"
+                id=""
+                value="music"
+              />음악감상
+            </td>
+          </tr>
+          <tr>
+            <td class="sub-title">자기소개:</td>
+            <td>
+              <textarea
+                name=""
+                id="userIntroduce"
+                cols="40"
+                rows="5"
+              ></textarea>
+            </td>
+          </tr>
+        </table>
+        <div class="button-wrapper">
+          <button type="button" id="signUp" onclick="checkField()">
+            회원 가입
+          </button>
+          <button type="reset" onclick="resetEvent()">다시 입력</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      let samePw = false;
+      makeDateOption();
+      makeDateOptionDay();
+
+      function makeDateOption() {
+        let m = document.getElementById("month");
+
+        let monthHtml = "";
+        for (let i = 1; i <= 12; i++) {
+          monthHtml += `<option value="${String(i).padStart(2, "0")}">${String(
+            i
+          ).padStart(2, "0")}</option>`;
+        }
+        m.innerHTML = monthHtml;
+      }
+
+      function makeDateOptionDay() {
+        let month = +document.getElementById("month").value;
+        let day = document.getElementById("day");
+        let maxDay = 30;
+
+        if ((month < 7 && month % 2 === 1) || (month > 7 && month % 2 === 0)) {
+          maxDay = 31;
+        }
+
+        if (month === 2) maxDay = 29;
+
+        let dayHtml = "";
+        for (let i = 1; i <= maxDay; i++) {
+          dayHtml += `<option value="${String(i).padStart(2, "0")}">${String(
+            i
+          ).padStart(2, "0")}</option>`;
+        }
+        day.innerHTML = dayHtml;
+      }
+
+      function isFill() {
+        const fields = ["userName", "userIntroduce"];
+        const interets = document.getElementsByName("");
+        let ok = 0;
+
+        fields.forEach((f) => {
+          const field = document.getElementById(f);
+          const text = field.value;
+
+          if (text.length >= 1) {
+            field.style.outline = "none";
+            ok++;
+          } else {
+            field.style.outline = "2px solid red";
+          }
+        });
+
+        if (document.getElementById("userBirthYear").value.length === 4) {
+          document.getElementById("userBirthYear").style.outline = "none";
+          ok++;
+        } else {
+          document.getElementById("userBirthYear").style.outline =
+            "2px solid red";
+        }
+
+        let isCheck = false;
+        let interests = document.getElementsByName("interests");
+        for (let i = 0; i < interests.length; i++) {
+          if (interests[i].checked) {
+            isCheck = true;
+            ok++;
+            break;
+          }
+        }
+
+        if (!isCheck) {
+          for (let i = 0; i < interests.length; i++)
+            interests[i].style.outline = "2px solid red";
+        } else {
+          for (let i = 0; i < interests.length; i++)
+            interests[i].style.outline = "none";
+        }
+
+        if (ok === 4) return true;
+
+        return false;
+      }
+
+      function checkField() {
+        const fields = ["userId", "userPw", "userMail", "userNumber"];
+        const regex = /^[a-z|A-Z|0-9]+$/;
+        const regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+        const regexNumber =
+          /^\d{2}(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])\d{7}$/;
+        let res;
+        let ok = 0;
+
+        for (let i = 0; i < fields.length; i++) {
+          const f = fields[i];
+          const field = document.getElementById(f);
+          const text = field.value;
+
+          switch (f) {
+            case "userId":
+            case "userPw":
+              res = regex.test(text);
+              break;
+
+            case "userMail":
+              res = regexMail.test(text);
+              break;
+
+            case "userNumber":
+              res = regexNumber.test(text);
+              break;
+
+            default:
+              break;
+          }
+
+          if (res) {
+            field.style.outline = "none";
+            ok++;
+          } else {
+            field.value = "";
+            field.style.outline = "2px solid red";
+            field.focus();
+
+            if (f === "userPw") {
+              checkCorrectPw();
+            }
+
+            return false;
+          }
+        }
+        isFill();
+        checkCorrectPw();
+
+        if (ok === 4 && samePw && isFill()) alert("회원가입을 축하드립니다.");
+        else return;
+      }
+
+      function checkCorrectPw() {
+        const pw = document.getElementById("userPw").value;
+        const ch = document.getElementById("userPwCheck").value;
+
+        if (pw.length > 0 && pw === ch) {
+          document.getElementById("userPwCheck").style.outline = "none";
+          samePw = true;
+        } else {
+          document.getElementById("userPwCheck").style.outline =
+            "2px solid red";
+        }
+      }
+
+      function resetEvent() {
+        document.getElementById("userId").style.outline = "none";
+        document.getElementById("userPw").style.outline = "none";
+        document.getElementById("userPwCheck").style.outline = "none";
+        document.getElementById("userMail").style.outline = "none";
+        document.getElementById("userName").style.outline = "none";
+        document.getElementById("userNumber").style.outline = "none";
+        document.getElementById("userBirthYear").style.outline = "none";
+        document.getElementById("userIntroduce").style.outline = "none";
+      }
+    </script>
+  </body>
+</html>

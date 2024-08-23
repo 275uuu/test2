@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #232323;
+      }
+
+      .box {
+        position: relative;
+        width: 380px;
+        height: 420px;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .borderline {
+        position: absolute;
+        top: 0;
+        inset: 0;
+      }
+
+      .box form {
+        position: absolute;
+        inset: 4px;
+        background: #222;
+        padding: 50px 40px;
+        border-radius: 8px;
+        z-index: 2;
+      }
+
+      .box::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 380px;
+        height: 420px;
+        background: linear-gradient(
+          0deg,
+          transparent,
+          transparent,
+          #22c1ff,
+          #22c1ff,
+          #22c1ff
+        );
+        z-index: 1;
+        transform-origin: bottom right;
+        animation: borders 6s infinite linear;
+      }
+
+      .box::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 380px;
+        height: 420px;
+        background: linear-gradient(
+          0deg,
+          transparent,
+          transparent,
+          #22c1ff,
+          #22c1ff,
+          #22c1ff
+        );
+        z-index: 1;
+        transform-origin: bottom right;
+        animation: borders 6s infinite linear;
+        animation-delay: -3s;
+      }
+
+      @keyframes borders {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="borderline"></div>
+      <form action=""></form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>07</title>
+    <style>
+      a {
+        text-decoration: none;
+        font-size: 20px;
+        color: black;
+        display: block;
+      }
+
+      a:hover {
+        color: aquamarine;
+        border: 1px solid #999;
+      }
+
+      a:visited {
+        color: #999;
+      }
+
+      a:link {
+        color: green;
+      }
+
+      /* 이거 안됨 */
+      input :hover {
+        border-color: blue;
+      }
+
+      input:focus {
+        border-color: green;
+      }
+
+      label {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      label::before {
+        content: '*';
+        color: red;
+      }
+
+      label::after {
+        content: '!';
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <a target="_blank" href="https://www.google.com">google</a>
+    <a target="_blank" href="https://www.asdassssss.com">asdf</a>
+    <a target="_blank" href="https://www.asd2222assssss.com">asdf3333333</a>
+
+    <label for="">input field</label>
+    <input type="text" />
+  </body>
+</html>

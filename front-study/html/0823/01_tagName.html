@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="id" name="name" value="Hello World" />
+
+    <script>
+      let do_id = document.getElementById("id");
+      let do_name = document.getElementsByName("name");
+
+      // 배열 리턴
+      let do_tag = document.getElementsByTagName('input');
+      for (let id = 0; id < do_tag.length; id++) {
+        console.log(do_tag[id].value)
+        console.log(do_tag[i].type)
+      }
+    </script>
+  </body>
+</html>

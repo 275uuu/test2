@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02</title>
+
+    <style>
+      .di {
+        font-size: 25px;
+        width: 140px;
+        text-align: center;
+        font-weight: bold;
+        border: 1px solid black;
+        border-radius: 15px;
+        cursor: pointer;
+      }
+
+      .outter {
+        display: none;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 1000px;
+        background-color: rgba(41, 66, 99, 0.5);
+      }
+
+      .inner {
+        background-color: #fff;
+        width: 60%;
+        height: 60%;
+        margin: 7% auto;
+        border: 1px solid #cacaca;
+        border-radius: 10px;
+      }
+
+      .btn-close {
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        margin-right: 20px;
+        cursor: pointer;
+      }
+
+      .btn-close:hover {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="di" onclick="clicked()">임시버튼</div>
+    <input type="button" value="button1" />
+    <button>button2</button>
+
+    <div class="outter" id="modal_open">
+      <div class="inner">
+        <span class="btn-close" onclick="closeEvent()">&times;</span>
+        <img src="../../img/hnars.jpg" alt="">
+      </div>
+    </div>
+
+    <script>
+      function clicked() {
+        document.getElementById("modal_open").style.display = "block";
+      }
+
+      function closeEvent() {
+        document.getElementById('modal_open').style.display = "none";
+      }
+    </script>
+  </body>
+</html>

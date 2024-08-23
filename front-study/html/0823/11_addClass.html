@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11</title>
+
+    <style>
+      body {
+        background-color: #1c1c3b;
+      }
+      .box {
+        width: 300px;
+        height: 300px;
+        border: 3px solid black;
+        background-color: dodgerblue;
+        margin: 20% auto;
+        transition: width 0.2s, height 0.2s;
+      }
+
+      .wid {
+        width: 80%;
+      }
+
+      .hei {
+        height: 500px;
+      }
+
+      .shinyAnime {
+        animation: shiny 0.8s ease-in infinite;
+      }
+
+      @keyframes shiny {
+        0% {
+          box-shadow: 100px 0 80px #a2a2a2, -100px 0 80px #a2a2a2;
+          transform: scale(1.2);
+          background-color: rgb(118, 120, 255);
+        }
+
+        50% {
+          box-shadow: none;
+          transform: scale(1);
+          background-color: dodgerblue;
+        }
+
+        60% {
+          box-shadow: 0 100px 80px #a2a2a2, 0 -100px 80px #a2a2a2;
+          transform: scale(1.2);
+          background-color: rgb(118, 120, 255);
+        }
+
+        100% {
+          box-shadow: none;
+          transform: scale(1);
+          background-color: dodgerblue;
+        }
+      }
+
+      .disappear {
+        animation: bye 0.1s ease-in infinite;
+        transform: translateX(1000px) translateY(-1000px);
+      }
+
+      @keyframes bye {
+        0% {
+          transform: rotate(360deg);
+        }
+        100% {
+          transform: rotate(180deg);
+        }
+      }
+
+      .goodbye {
+        animation: byebye 3s ease-in;
+      }
+
+      @keyframes byebye {
+        20% {
+          transform: translateX(400px) translateY(-100px);
+        }
+
+        40% {
+          transform: translateX(-400px) translateY(-5000px);
+        }
+      }
+
+      .showTxt {
+        color: white;
+        animation: showText 1s ease-in-out infinite;
+        width: 100%;
+        text-align: center;
+        font-size: 100px;
+        position: absolute;
+        top: 27%;
+      }
+
+      @keyframes showText {
+        50% {
+          transform: scale(5);
+        }
+
+        10% {
+          transform: scale(0.5);
+        }
+      }
+
+      .clock {
+        animation: clockAnime 0.2s infinite ease-in-out alternate-reverse;
+      }
+
+      @keyframes clockAnime {
+        50% {
+          transform: translatex(400px);
+        }
+      }
+
+      .wow {
+        animation: wow 0.2s infinite linear;
+      }
+
+      @keyframes wow {
+        50% {
+          transform: translateX(-100px);
+        }
+
+        100% {
+          transform: translateX(200px);
+        }
+      }
+    </style>
+  </head>
+  <body id="body">
+    <button id="btn1">늘리다. 가로</button>
+    <button id="btn2">늘리다. 세로</button>
+    <button id="btn3">반짝이다</button>
+    <button id="btn4">안녕</button>
+    <button id="btn5">삐걱거리다</button>
+    <button id="btn6">모두</button>
+    <div id="good" class="">
+      <div class="box"></div>
+    </div>
+    <div id="txt" class="">BYE</div>
+
+    <script>
+      const classes = ["wid", "hei", "shinyAnime", "disappear", "clock"];
+      let b1 = document.getElementById("btn1");
+      let b2 = document.getElementById("btn2");
+      let b3 = document.getElementById("btn3");
+      let b4 = document.getElementById("btn4");
+      let b5 = document.getElementById("btn5");
+      let b6 = document.getElementById("btn6");
+      let box = document.querySelector(".box");
+      let good = document.getElementById("good");
+      let txt = document.getElementById("txt");
+      let body = document.getElementById("body");
+
+      b1.addEventListener("click", () => {
+        box.classList.remove(...classes);
+
+        if (good.classList.contains("goodbye")) {
+          good.classList.remove("goodbye");
+          txt.classList.remove("showTxt");
+        }
+
+        if (body.classList.contains("wow")) {
+          body.classList.remove("wow");
+        }
+
+        box.classList.add("wid");
+      });
+
+      b2.addEventListener("click", () => {
+        box.classList.remove(...classes);
+
+        if (good.classList.contains("goodbye")) {
+          good.classList.remove("goodbye");
+          txt.classList.remove("showTxt");
+        }
+
+        if (body.classList.contains("wow")) {
+          body.classList.remove("wow");
+        }
+
+        box.classList.add("hei");
+      });
+
+      b3.addEventListener("click", () => {
+        box.classList.remove(...classes);
+
+        if (good.classList.contains("goodbye")) {
+          good.classList.remove("goodbye");
+          txt.classList.remove("showTxt");
+        }
+
+        if (body.classList.contains("wow")) {
+          body.classList.remove("wow");
+        }
+
+        box.classList.add("shinyAnime");
+      });
+
+      b4.addEventListener("click", () => {
+        box.classList.remove(...classes);
+
+        if (body.classList.contains("wow")) {
+          body.classList.remove("wow");
+        }
+
+        good.classList.add("goodbye");
+        txt.classList.add("showTxt");
+        box.classList.add("disappear");
+      });
+
+      b5.addEventListener("click", () => {
+        box.classList.remove(...classes);
+
+        if (good.classList.contains("goodbye")) {
+          good.classList.remove("goodbye");
+          txt.classList.remove("showTxt");
+        }
+
+        if (body.classList.contains("wow")) {
+          body.classList.remove("wow");
+        }
+
+        body.classList.add("wow");
+        box.classList.add("clock");
+      });
+
+      b6.addEventListener("click", () => {
+        box.classList.add(...classes);
+        body.classList.add("wow");
+        good.classList.add("goodbye");
+        txt.classList.add("showTxt");
+      });
+    </script>
+  </body>
+</html>

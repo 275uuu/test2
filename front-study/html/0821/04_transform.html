@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04</title>
+
+    <style>
+      .outline,
+      .box {
+        width: 60px;
+        height: 60px;
+      }
+
+      .outline {
+        border: 3px solid yellow;
+        margin: 20px 60px 0px 0px;
+        display: inline-block;
+        box-shadow: 8px 5px 14px rgb(144, 227, 255);
+        animation-name: move;
+        animation-duration: 0.7s;
+      }
+
+      .box {
+        background-color: deepskyblue;
+      }
+
+      .outline:hover {
+        /* transition-duration: 0.4s; */
+        transition: box-shadow 0.4s, background-color 1s, transform 0.4s;
+        transform: scale(2);
+        box-shadow: none;
+        background-color: rgb(16, 47, 114);
+      }
+
+      @keyframes move {
+        0% {
+          transform: translateX(200px);
+          background-color: aqua;
+        }
+        60% {
+          transform: translateX(0px);
+          background-color: blue;
+        }
+        90% {
+          transform: translateX(50px);
+          background-color: dodgerblue;
+        }
+        100% {
+            transform: translateX(0px);
+            background-color: darkblue;
+        }
+      }
+
+      .box:hover {
+        transition-duration: 1s;
+        transform: rotate(180deg);
+      }
+
+      .translate {
+        transform: translateX(50px);
+      }
+
+      .translate1 {
+        transform: translateX(-50px);
+      }
+
+      .translate2 {
+        transform: translate(100px, 20px);
+      }
+
+      .translate3 {
+        transform: translateY(100px);
+      }
+
+      .translate4 {
+        transform: translateY(-100px);
+      }
+
+      .scale1 {
+        transform: scale(1.5);
+      }
+
+      .scale2 {
+        transform: scale(0.5);
+      }
+
+      .scale3 {
+        transform: scaleY(0.5);
+      }
+
+      .rotate {
+        transform: rotate(50deg);
+      }
+
+      .parOutline {
+        perspective: 1px;
+      }
+      .rotateX {
+        transform: rotateX(1deg);
+      }
+      .rotateY {
+        transform: rotateY(1deg);
+      }
+
+      .skew {
+        transform: skew(15deg, 20deg);
+      }
+
+      .skewX {
+        transform: skewX(15deg);
+      }
+
+      .skewY {
+        transform: skewY(20deg);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Translate</h1>
+    <div class="outline">
+      <div class="box translate"></div>
+    </div>
+    <div class="outline">
+      <div class="box translate1"></div>
+    </div>
+    <div class="outline">
+      <div class="box translate2"></div>
+    </div>
+    <div class="outline">
+      <div class="box translate3"></div>
+    </div>
+    <div class="outline">
+      <div class="box translate4"></div>
+    </div>
+
+    <h1>Scale</h1>
+    <div class="outline">
+      <div class="box scale1"></div>
+    </div>
+    <div class="outline">
+      <div class="box scale2"></div>
+    </div>
+    <div class="outline">
+      <div class="box scale3"></div>
+    </div>
+
+    <h1>Rotate</h1>
+    <div class="outline">
+      <div class="box rotate"></div>
+    </div>
+    <div class="outline parOutline">
+      <div class="box rotateX"></div>
+    </div>
+    <div class="outline parOutline">
+      <div class="box rotateY"></div>
+    </div>
+
+    <h1>skew</h1>
+    <div class="outline">
+      <div class="box skew"></div>
+    </div>
+    <div class="outline">
+      <div class="box skewX"></div>
+    </div>
+    <div class="outline">
+      <div class="box skewY"></div>
+    </div>
+  </body>
+</html>

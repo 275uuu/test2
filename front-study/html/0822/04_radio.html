@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04</title>
+  </head>
+  <body>
+    <h1>좋아하는 국가는?</h1>
+    <input type="radio" name="nat" id="" value="korea" />대한민국
+    <input type="radio" name="nat" id="" value="japan" />일본
+    <input type="radio" name="nat" id="" value="america" />미국
+    <input type="radio" name="nat" id="" value="argentina" />아르헨티나
+    <br />
+    <button onclick="result()">SELECT</button>
+
+    <script>
+      function result() {
+        let ras = document.getElementsByName("nat");
+
+        ras.forEach((r) => {
+          if (r.checked) alert(r.value + "을(를) 선택하셨습니다.");
+          r.checked;
+        });
+      }
+    </script>
+  </body>
+</html>

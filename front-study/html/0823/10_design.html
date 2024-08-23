@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10</title>
+  </head>
+  <body>
+    <input type="text" name="" id="" onkeydown="test(event)" />
+    <input type="button" name="" class="btn" value="전송" />
+    <script>
+      function test(e) {
+        console.log(e.keyCode);
+        if (e.keyCode === 13) alert("asdf");
+      }
+
+      function result() {
+        alert();
+      }
+
+      let btn = document.querySelector(".btn"); //element
+      btn.addEventListener("click", result);
+    </script>
+  </body>
+</html>

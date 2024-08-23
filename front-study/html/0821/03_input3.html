@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02</title>
+  </head>
+  <body>
+    <input type="text" name="" id="user_id" value="Hello World" />
+    <input type="button" value="click" onclick="clickEvent()" />
+
+    <script>
+      let dd = document.getElementById("user_id");
+      console.log(dd);
+      document.getElementById("user_id").value = "java";
+      dd.value = "go home";
+
+      // event handler
+      function clickEvent() {
+        alert(dd.value);
+      }
+    </script>
+  </body>
+</html>

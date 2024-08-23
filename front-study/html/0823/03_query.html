@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03</title>
+
+    <style>
+      .border {
+        border: 1px solid black;
+      }
+
+      .font-size {
+        font-size: 20px;
+      }
+
+      .padding {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" class="border padding" />
+    <input type="text" class="border font-size" />
+
+    <script>
+      // 배열
+      let s1 = document.querySelectorAll(".border");
+      let s2 = document.querySelectorAll(".border:nth-child(1)");
+      let s3 = document.querySelectorAll("input");
+
+      // 첫번째 대상 하나만
+      let a1 = document.querySelector("border");
+    </script>
+  </body>
+</html>

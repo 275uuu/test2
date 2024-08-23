@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07</title>
+
+    <style>
+        .loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .dto {
+            width: 20px;
+            height: 20px;
+            background-color: dodgerblue;
+            border-radius: 50%;
+            margin: 2px;
+            animation: buffer 0.3s infinite alternate ;
+            animation-timing-function: ease, ease-in-out;
+        }
+
+        @keyframes buffer {
+            from {
+                transform: translateY(0px);
+            }
+            to {
+                transform: translateY(-28px);
+            }
+        }
+
+        .dto:nth-child(1) {animation-delay: 0s;}
+        .dto:nth-child(2) {animation-delay: 0.1s;}
+        .dto:nth-child(3) {animation-delay: 0.2s;}
+        .dto:nth-child(4) {animation-delay: 0.3s;}
+        .dto:nth-child(5) {animation-delay: 0.4s;}
+
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div class="dto"></div>
+        <div class="dto"></div>
+        <div class="dto"></div>
+        <div class="dto"></div>
+        <div class="dto"></div>
+    </div>
+</body>
+</html>
